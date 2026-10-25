@@ -1,0 +1,34 @@
+{
+  "name": "puku-sdk-demo",
+  "version": "1.0.0",
+  "description": "Simple demo application showing how to use the Puku Agent SDK",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "demo:basic": "tsx src/01_basic_query.ts",
+    "demo:stream": "tsx src/02_streaming.ts",
+    "demo:structured": "tsx src/03_structured_output.ts",
+    "demo:tools": "tsx src/04_custom_tools.ts",
+    "postinstall": "node scripts/patch-sdk.js",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@puku-ai/sdk": "^4.0.5",
+    "@sentry/bun": "^10.76.2",
+    "dotenv": "^16.4.7",
+    "puku-agent-sdk": "^3.1.4",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  },
+  "overrides": {
+    "zod": "^3.24.2",
+    "puku-agent-sdk": {
+      "puku-agent-sdk": "$puku-agent-sdk"
+    }
+  }
+}
